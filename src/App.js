@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; // CSS features are used in this app.
+import { Outlet } from 'react-router-dom'; // We use the outlet property so we import them.
+import { Footer } from './routes/Footer';
+import { Header } from './routes/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+
+      {/* We render the nested component on the same page with "Outlet" */}
+
+      <div className='container'>
+        <Outlet />
+      </div>
+      
+      <Footer/>
+    </>
   );
 }
 
